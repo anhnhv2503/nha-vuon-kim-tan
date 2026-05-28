@@ -1,4 +1,8 @@
 import { motion } from "framer-motion";
+import Image from "next/image";
+import durian from "@/data/images/durian-bg-removed.png";
+import pepper from "@/data/images/pepper-bg-removed.png";
+import honey from "@/data/images/honey-bg-removed.png";
 
 export const Hero = () => {
   return (
@@ -20,7 +24,7 @@ export const Hero = () => {
               Gia vị đặc biệt cao cấp & Trái cây lạ
             </motion.h1>
             <motion.p
-              className="text-base md:text-lg text-black max-w-xl leading-relaxed"
+              className="text-base md:text-lg text-black max-w-xl leading-relaxed z-10"
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -52,18 +56,33 @@ export const Hero = () => {
             </motion.div>
           </div>
           <motion.div
-            className="bg-[#F5E9D5] h-96 rounded-none flex items-center justify-center border border-[#E8DAC4]"
+            className="h-96 rounded-none flex items-center justify-center z-0"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             whileHover={{ scale: 1.02 }}
           >
-            <div className="text-center">
-              <p className="text-[#B6744A] text-xl font-semibold">
-                Sản phẩm Nổi Bật
-              </p>
-              <p className="text-sm text-[#999999] mt-2">Hình ảnh sắp có</p>
-            </div>
+            <Image
+              src={durian}
+              alt="Durian"
+              className="object-cover"
+              width={300}
+              height={500}
+            />
+            <Image
+              src={pepper}
+              alt="Pepper"
+              className="object-cover"
+              width={300}
+              height={500}
+            />
+            <Image
+              src={honey}
+              alt="Honey"
+              className="object-cover"
+              width={300}
+              height={500}
+            />
           </motion.div>
         </div>
       </div>

@@ -1,39 +1,8 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
-
-const AnimatedSection = ({ children, ...props }: any) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.1 });
-
-  return (
-    <motion.section
-      ref={ref}
-      initial={{ opacity: 0, y: 50 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      {...props}
-    >
-      {children}
-    </motion.section>
-  );
-};
-
-const AnimatedCard = ({ children, ...props }: any) => {
-  return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.95 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      whileHover={{ y: -8, boxShadow: "rgba(0, 0, 0, 0.12) 0px 8px 24px 0px" }}
-      transition={{ duration: 0.5 }}
-      viewport={{ once: true, amount: 0.2 }}
-      {...props}
-    >
-      {children}
-    </motion.div>
-  );
-};
+import AnimatedCard from "@/common/animated-card";
+import AnimatedSection from "@/common/animated-section";
+import { motion } from "framer-motion";
 
 export const ProductShowcase = () => {
   return (

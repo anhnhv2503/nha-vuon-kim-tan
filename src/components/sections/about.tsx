@@ -1,22 +1,7 @@
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
-
-const AnimatedSection = ({ children, ...props }: any) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.1 });
-
-  return (
-    <motion.section
-      ref={ref}
-      initial={{ opacity: 0, y: 50 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      {...props}
-    >
-      {children}
-    </motion.section>
-  );
-};
+import AnimatedSection from "@/common/animated-section";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import mainGate from "@/data/images/cong-chinh.webp";
 
 export const About = () => {
   return (
@@ -25,19 +10,20 @@ export const About = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <motion.div
-              className="bg-[#F5E9D5] h-80 rounded-none flex items-center justify-center border border-[#E8DAC4]"
+              className="h-80 rounded-none flex items-center justify-center"
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
               whileHover={{ scale: 1.02 }}
             >
-              <div className="text-center">
-                <p className="text-[#B6744A] font-semibold">
-                  Câu chuyện của chúng tôi
-                </p>
-                <p className="text-xs text-[#999999] mt-2">Hình ảnh sắp có</p>
-              </div>
+              <Image
+                src={mainGate}
+                alt="Main Gate"
+                className="object-cover"
+                width={300}
+                height={500}
+              />
             </motion.div>
             <div className="flex flex-col gap-6">
               <motion.h2
@@ -75,7 +61,7 @@ export const About = () => {
               </motion.p>
             </div>
           </div>
-          <h2 className="text-[24px] font-black text-[#4C2004] mb-12">
+          <h2 className="text-[24px] font-black text-[#4C2004] mb-12 mt-20">
             Sản phẩm Nổi Bật
           </h2>
 
