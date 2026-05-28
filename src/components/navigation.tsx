@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 export const Navigation = () => {
   return (
     <motion.nav
-      className="h-[72px] flex items-center px-8 md:px-16 lg:px-32 shadow-[rgba(0,0,0,0.1)_0px_2px_20px_0px] bg-[rgba(243,231,211,0.31)]"
+      className="h-18 flex items-center px-8 md:px-16 lg:px-32 shadow-[rgba(0,0,0,0.1)_0px_2px_20px_0px] bg-[rgba(243,231,211,0.31)]"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}

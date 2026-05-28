@@ -52,7 +52,7 @@ export const Hero = () => {
             </motion.div>
           </div>
           <motion.div
-            className="bg-[#F5E9D5] h-96 rounded-none flex items-center justify-center border-[1px] border-[#E8DAC4]"
+            className="bg-[#F5E9D5] h-96 rounded-none flex items-center justify-center border border-[#E8DAC4]"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
