@@ -21,8 +21,7 @@ export const About = () => {
                 src={mainGate}
                 alt="Main Gate"
                 className="object-cover"
-                width={300}
-                height={500}
+                loading="eager"
               />
             </motion.div>
             <div className="flex flex-col gap-6">
@@ -61,7 +60,7 @@ export const About = () => {
               </motion.p>
             </div>
           </div>
-          <h2 className="text-[24px] font-black text-[#4C2004] mb-12 mt-20">
+          <h2 className="text-[24px] font-black text-[#4C2004] mb-12 mt-32">
             Sản phẩm Nổi Bật
           </h2>
 

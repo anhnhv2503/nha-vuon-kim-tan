@@ -1,8 +1,8 @@
+import durian from "@/data/images/durian-bg-removed.png";
+import honey from "@/data/images/honey-bg-removed.png";
+import pepper from "@/data/images/pepper-bg-removed.png";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import durian from "@/data/images/durian-bg-removed.png";
-import pepper from "@/data/images/pepper-bg-removed.png";
-import honey from "@/data/images/honey-bg-removed.png";
 
 export const Hero = () => {
   return (
@@ -14,7 +14,7 @@ export const Hero = () => {
     >
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-16 items-center">
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-8 z-10">
             <motion.h1
               className="text-[28px] md:text-[36px] lg:text-[51.2px] font-black leading-tight text-[#4C2004]"
               initial={{ opacity: 0, x: -50 }}
@@ -24,7 +24,7 @@ export const Hero = () => {
               Gia vị đặc biệt cao cấp & Trái cây lạ
             </motion.h1>
             <motion.p
-              className="text-base md:text-lg text-black max-w-xl leading-relaxed z-10"
+              className="text-base md:text-lg text-black max-w-xl leading-relaxed "
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -66,22 +66,19 @@ export const Hero = () => {
               src={durian}
               alt="Durian"
               className="object-cover"
-              width={300}
-              height={500}
+              loading="eager"
             />
             <Image
               src={pepper}
               alt="Pepper"
               className="object-cover"
-              width={300}
-              height={500}
+              loading="eager"
             />
             <Image
               src={honey}
               alt="Honey"
               className="object-cover"
-              width={300}
-              height={500}
+              loading="eager"
             />
           </motion.div>
         </div>

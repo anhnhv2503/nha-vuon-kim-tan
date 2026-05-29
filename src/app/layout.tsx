@@ -16,6 +16,9 @@ export const metadata: Metadata = {
   title: "Nhà Vườn Kim Tân - Gia vị đặc biệt cao cấp & Trái cây lạ",
   description:
     "Khám phá gia vị đặc biệt cao cấp, trái cây lạ và nguyên liệu thủ công tại Nhà Vườn Kim Tân. Chất lượng thực từ thiên nhiên.",
+  icons: {
+    icon: [{ url: "/logo.png", type: "image/png" }],
+  },
 };
 
 export default function RootLayout({
