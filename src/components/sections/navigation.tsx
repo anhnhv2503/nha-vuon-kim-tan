@@ -9,7 +9,7 @@ export const Navigation = () => {
     >
       <div className="max-w-7xl w-full mx-auto flex justify-between items-center">
         <motion.div
-          className="text-3xl font-black text-[#4C2004]"
+          className="text-3xl font-black text-[#17960e]"
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.3 }}
         >
