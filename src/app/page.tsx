@@ -2,6 +2,7 @@
 
 import { About } from "@/components/sections/about";
 import { Footer } from "@/components/sections/footer";
+import Gallery from "@/components/sections/gallery";
 import { Hero } from "@/components/sections/hero";
 import { Navigation } from "@/components/sections/navigation";
 import { ProductShowcase } from "@/components/sections/product-showcase";
@@ -17,6 +18,8 @@ export default function Home() {
       <ProductShowcase />
       {/* About Section */}
       <About />
+      {/* Gallery Section */}
+      <Gallery />
       {/* Footer */}
       <Footer />
     </div>

@@ -1,15 +1,19 @@
 "use client";
 
-import AnimatedCard from "@/common/animated-card";
 import AnimatedSection from "@/common/animated-section";
+import { ProductCard } from "@/components/ui/product-card";
+import { products } from "@/data/mock/ProductList";
 import { motion } from "framer-motion";
 
 export const ProductShowcase = () => {
   return (
-    <AnimatedSection id="products" className="section-spacing bg-[#F3E7D3]">
-      <div className="max-w-6xl mx-auto">
+    <AnimatedSection
+      id="products"
+      className="w-full bg-[#F5E9D5] py-16 md:py-24 lg:py-32 px-4 sm:px-8 md:px-16 lg:px-32"
+    >
+      <div className="max-w-6xl mx-auto w-full">
         <motion.h2
-          className="text-[24px] font-black text-[#4C2004] mb-12"
+          className="text-[20px] sm:text-[22px] md:text-[24px] font-black text-[#4C2004] mb-8 md:mb-12"
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
@@ -18,7 +22,7 @@ export const ProductShowcase = () => {
           Sản phẩm Nổi Bật
         </motion.h2>
         <motion.div
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
@@ -32,77 +36,9 @@ export const ProductShowcase = () => {
             },
           }}
         >
-          {/* Product Card 1 */}
-          <AnimatedCard className="card">
-            <div className="h-48 bg-[#F5E9D5] mb-6 flex items-center justify-center border-b border-[#E8DAC4]">
-              <span className="text-[#B6744A]">Gia vị đặc biệt</span>
-            </div>
-            <h3 className="text-lg font-black text-[#4C2004] mb-3">
-              Hạt tiêu cao cấp
-            </h3>
-            <p className="text-black text-sm leading-relaxed mb-4">
-              Hạt tiêu tuyển chọn tay với hương vị táo bạo, phức tạp. Hoàn hảo
-              cho những người sành ăn.
-            </p>
-            <div className="flex justify-between items-center">
-              <span className="text-[#B6744A] font-semibold">Từ 595.000₫</span>
-              <motion.a
-                href="#"
-                className="text-[#E76B25] font-bold hover:text-[#D45A1A]"
-                whileHover={{ x: 5 }}
-              >
-                Xem →
-              </motion.a>
-            </div>
-          </AnimatedCard>
-
-          {/* Product Card 2 */}
-          <AnimatedCard className="card">
-            <div className="h-48 bg-[#F5E9D5] mb-6 flex items-center justify-center border-b border-[#E8DAC4]">
-              <span className="text-[#B6744A]">Trái cây lạ</span>
-            </div>
-            <h3 className="text-lg font-black text-[#4C2004] mb-3">
-              Sầu riêng cao cấp
-            </h3>
-            <p className="text-black text-sm leading-relaxed mb-4">
-              Vua của các loại trái cây. Sầu riêng tươi, thơm nhập khẩu trực
-              tiếp từ những estate cao cấp.
-            </p>
-            <div className="flex justify-between items-center">
-              <span className="text-[#B6744A] font-semibold">Từ 945.000₫</span>
-              <motion.a
-                href="#"
-                className="text-[#E76B25] font-bold hover:text-[#D45A1A]"
-                whileHover={{ x: 5 }}
-              >
-                Xem →
-              </motion.a>
-            </div>
-          </AnimatedCard>
-
-          {/* Product Card 3 */}
-          <AnimatedCard className="card">
-            <div className="h-48 bg-[#F5E9D5] mb-6 flex items-center justify-center border-b border-[#E8DAC4]">
-              <span className="text-[#B6744A]">Mật ong thủ công</span>
-            </div>
-            <h3 className="text-lg font-black text-[#4C2004] mb-3">
-              Mật ong vàng
-            </h3>
-            <p className="text-black text-sm leading-relaxed mb-4">
-              Mật ong nguyên chất, chưa qua xử lý từ những trang trại ong sạch.
-              Giàu hương vị và lợi ích dinh dưỡng.
-            </p>
-            <div className="flex justify-between items-center">
-              <span className="text-[#B6744A] font-semibold">Từ 475.000₫</span>
-              <motion.a
-                href="#"
-                className="text-[#E76B25] font-bold hover:text-[#D45A1A]"
-                whileHover={{ x: 5 }}
-              >
-                Xem →
-              </motion.a>
-            </div>
-          </AnimatedCard>
+          {products.map((product) => (
+            <ProductCard key={product.id} {...product} />
+          ))}
         </motion.div>
       </div>
     </AnimatedSection>

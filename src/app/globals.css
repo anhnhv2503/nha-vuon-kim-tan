@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --color-coffee-brown: #346739;
-  --color-clay: #79AE6F;
-  --color-burnt-orange: #9FCB98;
-  --color-cream-primary: #F2EDC2;
-  --color-cream-secondary: #F2EDC2;
+  --color-coffee-brown: #4C2004;
+  --color-clay: #B6744A;
+  --color-burnt-orange: #E76B25;
+  --color-cream-primary: #F3E7D3;
+  --color-cream-secondary: #F5E9D5;
   --color-pure-black: #000000;
   --color-pure-white: #FFFFFF;
   --color-text-muted: #999999;
@@ -88,31 +88,36 @@ button {
   border: none;
   cursor: pointer;
   transition: background-color 0.2s ease;
+  width: 400px;
+  min-height: 44px;
 }
 
 .btn-primary:hover {
-  background-color: #6B9D5E;
+  background-color: #D45A1A;
 }
 
 .btn-primary:active {
-  background-color: #5A8E4E;
+  background-color: #C2501A;
   box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .btn-secondary {
   background-color: var(--color-cream-primary);
   color: var(--color-pure-black);
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
-  padding: 9.6px 32px;
+  padding: 12px 24px;
   border: 1px solid var(--color-clay);
+  border-radius: 0px;
   cursor: pointer;
   transition: all 0.2s ease;
+  height: auto;
+  min-height: 44px;
 }
 
 .btn-secondary:hover {
   background-color: #E8DAC4;
-  border-color: #346739;
+  border-color: #8B5A35;
 }
 
 /* Spacing utilities */
@@ -164,6 +169,7 @@ input, textarea, select {
   border-radius: 0px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   transition: all 0.2s ease;
+  min-height: 44px;
 }
 
 input:focus, textarea:focus, select:focus {
@@ -176,8 +182,23 @@ input::placeholder {
   color: var(--color-text-muted);
 }
 
-/* Responsive */
+/* ===== RESPONSIVE STYLES ===== */
+
+/* Tablet (600px - 1023px) */
 @media (max-width: 1023px) {
+  h1 {
+    font-size: 36px;
+    line-height: 36px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+
   .section-spacing {
     padding: 48px 24px;
   }
@@ -185,13 +206,47 @@ input::placeholder {
   .section-spacing-lg {
     padding: 64px 24px;
   }
-  
-  h1 {
-    font-size: 36px;
+
+  .gap-section {
+    margin-bottom: 48px;
+  }
+
+  .btn-primary {
+    width: auto;
+    max-width: 100%;
+    padding: 9.6px 24px;
+  }
+
+  .card {
+    padding: 24px;
   }
 }
 
+/* Mobile (320px - 599px) */
 @media (max-width: 599px) {
+  h1 {
+    font-size: 28px;
+    line-height: 32px;
+    font-weight: 800;
+  }
+
+  h2 {
+    font-size: 20px;
+    font-weight: 900;
+    line-height: 24px;
+  }
+
+  h3 {
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 16px;
+  }
+
+  p, body {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
   .section-spacing {
     padding: 40px 16px;
   }
@@ -199,12 +254,32 @@ input::placeholder {
   .section-spacing-lg {
     padding: 48px 16px;
   }
-  
-  h1 {
-    font-size: 28px;
+
+  .gap-section {
+    margin-bottom: 40px;
   }
-  
+
   .btn-primary {
     width: 100%;
+    font-size: 16px;
+    padding: 8px 16px;
+    height: auto;
+    min-height: 44px;
+  }
+
+  .btn-secondary {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+
+  .card {
+    padding: 16px;
+  }
+
+  input, textarea, select {
+    font-size: 16px;
+    padding: 10px 12px;
+    min-height: 44px;
   }
 }
