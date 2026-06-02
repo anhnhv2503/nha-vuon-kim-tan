@@ -48,7 +48,7 @@ export const ProductCard = (product: Product) => {
 
           {/* CTA Button with modern design */}
           <motion.button
-            className="w-full py-2.5 sm:py-3 px-4 bg-gradient-to-r from-[#E76B25] to-[#D45A1A] text-white font-semibold text-sm sm:text-base rounded-lg hover:from-[#D45A1A] hover:to-[#C34A0A] transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2 group/btn"
+            className="w-full py-2.5 sm:py-3 px-4 bg-linear-to-r from-[#E76B25] to-[#D45A1A] text-white font-semibold text-sm sm:text-base rounded-lg hover:from-[#D45A1A] hover:to-[#C34A0A] transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2 group/btn"
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.98 }}
           >

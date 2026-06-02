@@ -104,7 +104,7 @@ export const Hero = () => {
   return (
     <motion.section
       ref={containerRef}
-      className="w-full bg-gradient-to-b from-white via-white to-[#F3E7D3] pt-16 md:pt-20 lg:pt-28 pb-12 md:pb-16 lg:pb-20 px-4 sm:px-8 md:px-16 lg:px-32 relative overflow-hidden"
+      className="w-full bg-linear-to-b from-white via-white to-[#F3E7D3] pt-16 md:pt-20 lg:pt-28 pb-12 md:pb-16 lg:pb-20 px-4 sm:px-8 md:px-16 lg:px-32 relative overflow-hidden"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
@@ -118,7 +118,7 @@ export const Hero = () => {
           {/* Image Grid with Text Overlay - FULL WIDTH */}
           <motion.div
             ref={imageContainerRef}
-            className="relative w-full h-[350px] sm:h-[450px] md:h-[550px] lg:h-[650px] grid grid-cols-3 gap-2 sm:gap-3 md:gap-4 lg:gap-6 perspective"
+            className="relative w-full h-87.5 sm:h-112.5 md:h-137.5 lg:h-162.5 grid grid-cols-3 gap-2 sm:gap-3 md:gap-4 lg:gap-6 perspective"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -169,7 +169,7 @@ export const Hero = () => {
                     loading="eager"
                     priority
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent flex flex-col justify-end p-4 md:p-6">
+                  <div className="absolute inset-0 bg-linear-to-t from-black/40 via-black/10 to-transparent flex flex-col justify-end p-4 md:p-6">
                     <span className="text-white font-black text-lg md:text-2xl">
                       {img.title}
                     </span>

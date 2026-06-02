@@ -18,7 +18,7 @@ export const Navigation = () => {
 
   return (
     <motion.nav
-      className="h-18 flex items-center px-4 sm:px-8 md:px-16 lg:px-32 shadow-[rgba(0,0,0,0.1)_0px_2px_20px_0px] bg-[rgba(243,231,211,0.31)] fixed w-full z-50 backdrop-blur-sm min-h-[72px]"
+      className="h-18 flex items-center px-4 sm:px-8 md:px-16 lg:px-32 shadow-[rgba(0,0,0,0.1)_0px_2px_20px_0px] bg-[rgba(243,231,211,0.31)] fixed w-full z-50 backdrop-blur-sm min-h-18"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
@@ -26,7 +26,7 @@ export const Navigation = () => {
       <div className="max-w-7xl w-full mx-auto flex justify-between items-center">
         {/* Logo */}
         <motion.div
-          className="text-3xl font-black text-[#4C2004] flex-shrink-0"
+          className="text-3xl font-black text-[#4C2004] shrink-0"
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.3 }}
         >

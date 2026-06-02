@@ -6,7 +6,7 @@ const Gallery = () => {
   return (
     <AnimatedSection
       id="gallery"
-      className="w-full bg-gradient-to-b from-white via-white to-[#F3E7D3] py-16 md:py-24 lg:py-32 px-4 sm:px-8 md:px-16 lg:px-32 relative overflow-hidden"
+      className="w-full bg-linear-to-b from-white via-white to-[#F3E7D3] py-16 md:py-24 lg:py-32 px-4 sm:px-8 md:px-16 lg:px-32 relative overflow-hidden"
     >
       <motion.h2
         className="text-[20px] sm:text-[22px] md:text-[24px] font-black text-[#4C2004] mb-8 md:mb-12"

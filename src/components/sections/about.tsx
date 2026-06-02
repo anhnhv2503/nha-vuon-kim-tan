@@ -8,7 +8,7 @@ export const About = () => {
     <>
       <AnimatedSection
         id="about"
-        className="section-spacing bg-gradient-to-b from-[#F3E7D3] via-white to-white h-164"
+        className="section-spacing bg-linear-to-b from-[#F3E7D3] via-white to-white h-164"
       >
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16 items-center">

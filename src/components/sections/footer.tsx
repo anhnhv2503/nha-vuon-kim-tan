@@ -11,7 +11,7 @@ export const Footer = () => {
   ];
 
   return (
-    <footer className="py-10 px-4 sm:px-6 lg:px-8 font-inter relative overflow-hidden bg-gradient-to-b from-[#F3E7D3] via-white to-[#F3E7D3]">
+    <footer className="py-10 px-4 sm:px-6 lg:px-8 font-inter relative overflow-hidden bg-linear-to-b from-[#F3E7D3] via-white to-[#F3E7D3]">
       <div className="max-w-7xl mx-auto flex flex-col items-center relative z-10">
         <div className="mb-6 flex items-center justify-center">
           <Image src="/logo.png" alt="Logo" width={80} height={80} />
