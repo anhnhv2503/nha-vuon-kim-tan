@@ -68,7 +68,7 @@ export const Navigation = () => {
                     className="relative px-4 py-2 text-white/90 font-medium text-sm group"
                   >
                     <motion.div
-                      className="absolute inset-0 rounded-lg bg-gradient-to-r from-emerald-400/0 via-emerald-400/20 to-emerald-400/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      className="absolute inset-0 rounded-lg bg-linear-to-r from-emerald-400/0 via-emerald-400/20 to-emerald-400/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                       initial={{ backgroundPositionX: "0%" }}
                       whileHover={{ backgroundPositionX: "100%" }}
                     />
@@ -76,7 +76,7 @@ export const Navigation = () => {
                       {item.label}
                     </span>
                     <motion.div
-                      className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-emerald-400 to-emerald-500 group-hover:w-full transition-all duration-300"
+                      className="absolute bottom-0 left-0 w-0 h-0.5 bg-linear-to-r from-emerald-400 to-emerald-500 group-hover:w-full transition-all duration-300"
                       initial={{ width: 0 }}
                       whileHover={{ width: "100%" }}
                     />

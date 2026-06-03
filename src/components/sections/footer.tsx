@@ -89,7 +89,7 @@ export const Footer = () => {
                     key={index}
                     className="flex items-start gap-4 group cursor-pointer"
                   >
-                    <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 group-hover:bg-emerald-500/20 group-hover:border-emerald-500 transition-all duration-300">
+                    <div className="shrink-0 w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 group-hover:bg-emerald-500/20 group-hover:border-emerald-500 transition-all duration-300">
                       {info.icon}
                     </div>
                     <div className="flex-1">
