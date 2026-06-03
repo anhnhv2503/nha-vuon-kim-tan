@@ -104,7 +104,7 @@ export const Hero = () => {
   return (
     <motion.section
       ref={containerRef}
-      className="w-full bg-linear-to-b from-white via-white to-[#F3E7D3] pt-16 md:pt-20 lg:pt-28 pb-12 md:pb-16 lg:pb-20 px-4 sm:px-8 md:px-16 lg:px-32 relative overflow-hidden"
+      className="w-full bg-linear-to-b from-white via-white to-[#F3E7D3] pt-16 md:pt-20 lg:pt-28 pb-12 md:pb-16 lg:pb-20 px-4 sm:px-8 md:px-16 lg:px-32 relative overflow-hidden mt-22"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}

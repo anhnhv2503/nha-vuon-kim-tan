@@ -7,7 +7,7 @@ export const ProductCard = (product: Product) => {
   return (
     <AnimatedCard className="overflow-hidden">
       {/* Modern gradient background with abstract shapes */}
-      <div className="relative h-auto rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+      <div className="relative h-auto rounded-2xl overflow-hidden hover:shadow-xl transition-shadow duration-300">
         {/* Abstract background pattern */}
         <div className="absolute inset-0 pointer-events-none" />
 
