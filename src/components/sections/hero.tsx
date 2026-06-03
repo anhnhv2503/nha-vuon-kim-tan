@@ -2,13 +2,13 @@ import durian from "@/data/images/durian-bg-removed.png";
 import honey from "@/data/images/honey-bg-removed.png";
 import pepper from "@/data/images/pepper-bg-removed.png";
 import {
+  AnimatePresence,
   motion,
   useScroll,
   useTransform,
-  AnimatePresence,
 } from "framer-motion";
 import Image from "next/image";
-import { useRef, useState, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export const Hero = () => {
   const containerRef = useRef(null);
@@ -124,7 +124,7 @@ export const Hero = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
           >
             {/* Dynamic Image Cards with Infinite Animation */}
-            <AnimatePresence mode="wait">
+            <AnimatePresence>
               {rotatedImages.map((img, index) => (
                 <motion.div
                   key={img.id}

@@ -30,7 +30,13 @@ export const Navigation = () => {
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.3 }}
         >
-          <Image src="/logo.png" alt="Logo" width={60} height={60} />
+          <Image
+            src="/logo.png"
+            alt="Logo"
+            width={60}
+            height={60}
+            loading="eager"
+          />
         </motion.div>
 
         {/* Desktop Menu */}
