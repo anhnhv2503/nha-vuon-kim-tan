@@ -1,34 +1,24 @@
 import type { Metadata } from "next";
-import {
-  Geist,
-  Geist_Mono,
-  Noto_Sans,
-  Playfair_Display,
-} from "next/font/google";
+import { Be_Vietnam_Pro, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import { MotionProvider } from "@/common/motion-provider";
 import { cn } from "@/lib/utils";
 
-const playfairDisplayHeading = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-heading",
+const display = Playfair_Display({
+  subsets: ["latin", "vietnamese"],
+  variable: "--font-display",
 });
 
-const notoSans = Noto_Sans({ subsets: ["latin"], variable: "--font-sans" });
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const body = Be_Vietnam_Pro({
+  subsets: ["latin", "vietnamese"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-body",
 });
 
 export const metadata: Metadata = {
-  title: "Nhà Vườn Kim Tân - Gia vị đặc biệt cao cấp & Trái cây lạ",
+  title: "Nhà Vườn Kim Tân · Sầu riêng, tiêu & mật ong từ vườn Đạ Huoai",
   description:
-    "Khám phá gia vị đặc biệt cao cấp, trái cây lạ và nguyên liệu thủ công tại Nhà Vườn Kim Tân. Chất lượng thực từ thiên nhiên.",
+    "Nhà Vườn Kim Tân ở Đạ Huoai, Lâm Đồng: sầu riêng, hạt tiêu và mật ong hái tại vườn, bán trực tiếp từ nhà vườn. Ghé thăm vườn hoặc gọi đặt hàng.",
   icons: {
     icon: [{ url: "/logo.png", type: "image/png" }],
   },
@@ -42,17 +32,12 @@ export default function RootLayout({
   return (
     <html
       lang="vi"
-      className={cn(
-        "h-full",
-        "antialiased",
-        geistSans.variable,
-        geistMono.variable,
-        "font-sans",
-        notoSans.variable,
-        playfairDisplayHeading.variable,
-      )}
+      data-scroll-behavior="smooth"
+      className={cn("h-full antialiased", display.variable, body.variable)}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <MotionProvider>{children}</MotionProvider>
+      </body>
     </html>
   );
 }
