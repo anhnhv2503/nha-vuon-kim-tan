@@ -1,188 +1,136 @@
+"use client";
+
 import durian from "@/data/images/durian-bg-removed.png";
 import honey from "@/data/images/honey-bg-removed.png";
 import pepper from "@/data/images/pepper-bg-removed.png";
-import {
-  AnimatePresence,
-  motion,
-  useScroll,
-  useTransform,
-} from "framer-motion";
+import { site } from "@/data/site";
+import { motion } from "framer-motion";
+import { ArrowRight, MapPin, Phone } from "lucide-react";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+
+const ease = [0.22, 1, 0.36, 1] as const;
 
 export const Hero = () => {
-  const containerRef = useRef(null);
-  const imageContainerRef = useRef(null);
-  const [rotation, setRotation] = useState(0);
-
-  // Auto-rotate images every 5 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setRotation((prev) => (prev + 1) % 3);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
-
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"],
+  const fadeUp = (delay: number) => ({
+    initial: { opacity: 0, y: 24 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.7, delay, ease },
   });
 
-  // Define images array for rotation
-  const images = [
-    {
-      id: "durian",
-      src: durian,
-      title: "Sầu riêng",
-      subtitle: "Vua của trái cây",
-      alt: "Durian - Vua của các loại trái cây",
-    },
-    {
-      id: "pepper",
-      src: pepper,
-      title: "Hạt tiêu",
-      subtitle: "Gia vị thơm ngát",
-      alt: "Pepper - Gia vị thơm ngát",
-    },
-    {
-      id: "honey",
-      src: honey,
-      title: "Mật ong",
-      subtitle: "Nguyên chất tự nhiên",
-      alt: "Honey - Mật ong nguyên chất",
-    },
-  ];
-
-  // Get rotated images based on current rotation state
-  const getRotatedImages = () => {
-    return [
-      images[(0 + rotation) % 3],
-      images[(1 + rotation) % 3],
-      images[(2 + rotation) % 3],
-    ];
-  };
-
-  const rotatedImages = getRotatedImages();
-
-  // Parallax effects for each image
-  const yDurian = useTransform(scrollYProgress, [0, 1], [50, -50]);
-  const yPepper = useTransform(scrollYProgress, [0, 1], [-30, 30]);
-  const yHoney = useTransform(scrollYProgress, [0, 1], [30, -30]);
-
-  const opacityDurian = useTransform(
-    scrollYProgress,
-    [0, 0.5, 1],
-    [0.7, 1, 0.7],
-  );
-  const opacityPepper = useTransform(
-    scrollYProgress,
-    [0, 0.5, 1],
-    [0.6, 1, 0.6],
-  );
-  const opacityHoney = useTransform(
-    scrollYProgress,
-    [0, 0.5, 1],
-    [0.7, 1, 0.7],
-  );
-
-  const scaleDurian = useTransform(
-    scrollYProgress,
-    [0, 0.5, 1],
-    [0.9, 1.05, 0.9],
-  );
-  const scalePepper = useTransform(
-    scrollYProgress,
-    [0, 0.5, 1],
-    [0.95, 1.08, 0.95],
-  );
-  const scaleHoney = useTransform(
-    scrollYProgress,
-    [0, 0.5, 1],
-    [0.9, 1.05, 0.9],
-  );
-
   return (
-    <motion.section
-      ref={containerRef}
-      className="w-full bg-linear-to-b from-white via-white to-[#F3E7D3] pt-16 md:pt-20 lg:pt-28 pb-12 md:pb-16 lg:pb-20 px-4 sm:px-8 md:px-16 lg:px-32 relative overflow-hidden mt-22"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.8 }}
+    <section
+      id="top"
+      className="relative overflow-hidden pt-28 pb-16 sm:pt-32 md:pb-24 lg:pt-36"
     >
-      {/* Decorative background elements */}
-      <div className="absolute top-10 right-10 w-32 h-32 bg-[#E76B25] rounded-full opacity-5 blur-3xl"></div>
-      <div className="absolute bottom-20 left-5 w-40 h-40 bg-[#B6744A] rounded-full opacity-5 blur-3xl"></div>
+      {/* soft background shapes */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -top-40 -right-40 h-[32rem] w-[32rem] rounded-full bg-honey/15 blur-3xl"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -bottom-40 -left-32 h-[28rem] w-[28rem] rounded-full bg-leaf/10 blur-3xl"
+      />
 
-      <div className="max-w-full mx-auto w-full relative z-10">
-        <div className="grid grid-cols-1 gap-6 md:gap-8 lg:gap-10">
-          {/* Image Grid with Text Overlay - FULL WIDTH */}
-          <motion.div
-            ref={imageContainerRef}
-            className="relative w-full h-87.5 sm:h-112.5 md:h-137.5 lg:h-162.5 grid grid-cols-3 gap-2 sm:gap-3 md:gap-4 lg:gap-6 perspective"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
+      <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-[1.05fr_1fr] lg:gap-16">
+        {/* Copy */}
+        <div>
+          <motion.p
+            {...fadeUp(0)}
+            className="mb-6 inline-flex items-center gap-2 rounded-full border border-forest/15 bg-white/60 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-forest"
           >
-            {/* Dynamic Image Cards with Infinite Animation */}
-            <AnimatePresence>
-              {rotatedImages.map((img, index) => (
-                <motion.div
-                  key={img.id}
-                  layoutId={img.id}
-                  className="relative h-full rounded-lg overflow-hidden bg-[#F5E9D5] border border-[#E8DAC4] shadow-md hover:shadow-lg transition-shadow duration-300"
-                  style={{
-                    y: index === 0 ? yDurian : index === 1 ? yPepper : yHoney,
-                    opacity:
-                      index === 0
-                        ? opacityDurian
-                        : index === 1
-                          ? opacityPepper
-                          : opacityHoney,
-                    scale:
-                      index === 0
-                        ? scaleDurian
-                        : index === 1
-                          ? scalePepper
-                          : scaleHoney,
-                  }}
-                  whileHover={{
-                    boxShadow: "0 20px 40px rgba(0,0,0,0.15)",
-                    borderColor: "#E76B25",
-                  }}
-                  initial={{ opacity: 0, scale: 0.8, rotate: 0 }}
-                  animate={{
-                    opacity: 1,
-                    scale: 1,
-                    rotate: 0,
-                  }}
-                  exit={{ opacity: 0, scale: 0.8 }}
-                  transition={{
-                    duration: 0.8,
-                    delay: index * 0.12,
-                    ease: "easeInOut",
-                  }}
-                >
-                  <Image
-                    src={img.src}
-                    alt={img.alt}
-                    className="w-full h-full object-cover"
-                    loading="eager"
-                    priority
-                  />
-                  <div className="absolute inset-0 bg-linear-to-t from-black/40 via-black/10 to-transparent flex flex-col justify-end p-4 md:p-6">
-                    <span className="text-white font-black text-lg md:text-2xl">
-                      {img.title}
-                    </span>
-                    <span className="text-white/80 font-medium text-xs md:text-sm">
-                      {img.subtitle}
-                    </span>
-                  </div>
-                </motion.div>
-              ))}
-            </AnimatePresence>
+            <MapPin className="h-3.5 w-3.5 text-honey" aria-hidden />
+            {site.region}
+          </motion.p>
+
+          <motion.h1
+            {...fadeUp(0.08)}
+            className="font-heading text-[2.6rem] font-semibold leading-[1.05] text-balance text-forest sm:text-6xl lg:text-7xl"
+          >
+            Sầu riêng, tiêu & mật ong{" "}
+            <span className="italic text-honey">từ chính vườn nhà.</span>
+          </motion.h1>
+
+          <motion.p
+            {...fadeUp(0.16)}
+            className="mt-6 max-w-xl text-lg leading-relaxed text-pretty text-ink-muted"
+          >
+            Nhà Vườn Kim Tân tự tay chăm sóc, thu hoạch và gửi đến bạn những sản
+            phẩm tươi ngon nhất của vùng đất Đạ Huoai. Mua trực tiếp từ nhà
+            vườn, không qua trung gian.
+          </motion.p>
+
+          <motion.div
+            {...fadeUp(0.24)}
+            className="mt-9 flex flex-col gap-3 sm:flex-row"
+          >
+            <a
+              href={site.phoneHref}
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-forest px-7 py-4 font-semibold text-cream shadow-lg shadow-forest/20 transition hover:-translate-y-0.5 hover:bg-forest-deep"
+            >
+              <Phone className="h-4 w-4" aria-hidden />
+              Gọi đặt hàng
+            </a>
+            <a
+              href="#products"
+              className="group inline-flex items-center justify-center gap-2 rounded-full border border-forest/20 bg-white/50 px-7 py-4 font-semibold text-forest transition hover:border-forest/40 hover:bg-white"
+            >
+              Xem sản phẩm
+              <ArrowRight
+                className="h-4 w-4 transition-transform group-hover:translate-x-1"
+                aria-hidden
+              />
+            </a>
           </motion.div>
         </div>
+
+        {/* Visual */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.96 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.9, delay: 0.1, ease }}
+          className="relative mx-auto w-full max-w-md lg:max-w-none"
+        >
+          <div className="relative aspect-[4/5] overflow-hidden rounded-[2.5rem] bg-forest">
+            <div
+              aria-hidden
+              className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(227,165,43,0.35),transparent_60%)]"
+            />
+            <div
+              aria-hidden
+              className="absolute inset-0 opacity-[0.07] [background-image:radial-gradient(#f7f1e5_1px,transparent_1px)] [background-size:18px_18px]"
+            />
+            <Image
+              src={durian}
+              alt="Sầu riêng Nhà Vườn Kim Tân"
+              fill
+              preload
+              sizes="(min-width: 1024px) 40vw, 90vw"
+              className="animate-float object-contain p-10 drop-shadow-[0_30px_40px_rgba(0,0,0,0.35)] sm:p-14"
+            />
+          </div>
+
+          {/* floating chips */}
+          <div className="absolute -left-3 bottom-10 flex items-center gap-3 rounded-2xl bg-cream p-2.5 pr-5 shadow-xl shadow-forest/15 sm:-left-8">
+            <div className="relative h-12 w-12 overflow-hidden rounded-xl bg-sand">
+              <Image src={pepper} alt="" fill sizes="48px" className="object-contain p-1" />
+            </div>
+            <div>
+              <p className="text-sm font-semibold text-forest">Hạt tiêu</p>
+              <p className="text-xs text-ink-muted">Cay thơm, hạt chắc</p>
+            </div>
+          </div>
+          <div className="absolute -right-3 top-10 flex items-center gap-3 rounded-2xl bg-cream p-2.5 pr-5 shadow-xl shadow-forest/15 sm:-right-6">
+            <div className="relative h-12 w-12 overflow-hidden rounded-xl bg-[#F6E6BE]">
+              <Image src={honey} alt="" fill sizes="48px" className="object-contain p-1" />
+            </div>
+            <div>
+              <p className="text-sm font-semibold text-forest">Mật ong</p>
+              <p className="text-xs text-ink-muted">Nguyên chất</p>
+            </div>
+          </div>
+        </motion.div>
       </div>
-    </motion.section>
+    </section>
   );
 };
